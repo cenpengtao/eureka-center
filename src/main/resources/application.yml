@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: eureka-center
+server:
+  port: 8761
+logging:
+  config: classpath:log4j2.xml
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
