@@ -1,6 +1,6 @@
 <configuration>
     <Properties>
-        <Property name="project-name">config-center</Property>
+        <Property name="project-name">eureka-center</Property>
         <Property name="log-path">/applog/${project-name}</Property>
     </Properties>
 
