@@ -32,7 +32,7 @@ eureka:
     easeRenewalIntervalInSeconds: 10
     health-check-url-path: /actuator/health
     status-page-url-path: /actuator/info
-    home-page-url-path: /
+    home-page-url-path: /actuator
     prefer-ip-address: true
     metadata-map:
       user.name: admin
