@@ -36,7 +36,7 @@ eureka:
       user.name: admin
       user.password: 149360
       management:
-        context-path: /${spring.application.name}
+        context-path: /${spring.application.name}/actuator
   #    instance-id: ${eureka.instance.ip-address}:${server.port}
   client:
     serviceUrl:
