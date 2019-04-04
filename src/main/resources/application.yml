@@ -16,6 +16,15 @@ info:
   artifactId: @project.artifactId@
   version: @project.version@
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+
 logging:
   config: classpath:log4j2.xml
 eureka:
