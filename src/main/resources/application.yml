@@ -1,29 +1,29 @@
 spring:
   application:
     name: eureka-center
+  security:
+    user:
+      name: admin
+      password: 149360
 
 server:
   port: 8761
-  context-path: /${spring.application.name}
+  servlet:
+    context-path: /${spring.application.name}
 
 info:
   groupId: @project.groupId@
   artifactId: @project.artifactId@
   version: @project.version@
 
-security:
-  user:
-    name: admin
-    password: 149360
-
 logging:
   config: classpath:log4j2.xml
 eureka:
   instance:
     easeRenewalIntervalInSeconds: 10
-    health-check-url-path: /${spring.application.name}/health
-    status-page-url-path: /${spring.application.name}/info
-    home-page-url-path: ${spring.application.name}
+    health-check-url-path: /actuator/health
+    status-page-url-path: /actuator/info
+    home-page-url-path: /
     prefer-ip-address: true
     metadata-map:
       user.name: admin
@@ -33,4 +33,4 @@ eureka:
   #    instance-id: ${eureka.instance.ip-address}:${server.port}
   client:
     serviceUrl:
-      defaultZone: http://${security.user.name}:${security.user.password}@localhost:8761/${spring.application.name}/eureka/
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@localhost:8761/${spring.application.name}/eureka/
